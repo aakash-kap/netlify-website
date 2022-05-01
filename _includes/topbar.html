@@ -37,7 +37,16 @@
               {{ site.data.locales[lang].tabs[item] | default: page.title }}
             </a>
           </span>
+        
+        {% elsif page.layout == 'post' %}
+          <span>
+            <a href="{{ item | relative_url }}">
+              {{ site.data.locales[lang].tabs[item] | default: page.title }}
+            </a>
+          </span>
+        
         {% endif %}
+
 
       {% endfor %}
 
